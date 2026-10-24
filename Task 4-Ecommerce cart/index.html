@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShopWave | Online Store</title>
+<meta name="description" content="E-commerce storefront with product filtering, search and a slide-out shopping cart.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-in">
+    <a class="logo" href="#top">ShopWave</a>
+    <div class="tools">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch to dark theme">☾</button>
+      <button class="icon-btn cart-btn" id="cartBtn" aria-label="Open cart, 0 items">
+        <span aria-hidden="true">🛒</span><span class="badge" id="badge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="top">
+  <section class="hero">
+    <h1>Everything you need, in one place.</h1>
+    <p class="muted">Browse electronics, jewelry and clothing. Free shipping on orders over $100.</p>
+  </section>
+
+  <div class="bar">
+    <div class="cats" id="cats" role="group" aria-label="Filter by category">
+      <button class="cat active" data-cat="all" aria-pressed="true">All</button>
+      <button class="cat" data-cat="electronics" aria-pressed="false">Electronics</button>
+      <button class="cat" data-cat="jewelry" aria-pressed="false">Jewelry</button>
+      <button class="cat" data-cat="clothing" aria-pressed="false">Clothing</button>
+    </div>
+    <div class="find">
+      <label class="sr" for="search">Search products</label>
+      <input id="search" type="search" placeholder="Search products...">
+      <label class="sr" for="sort">Sort products</label>
+      <select id="sort">
+        <option value="featured">Featured</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+        <option value="rating">Top rated</option>
+      </select>
+    </div>
+  </div>
+
+  <p id="count" class="muted" aria-live="polite"></p>
+  <div id="grid" class="grid"></div>
+  <div id="state" class="state" hidden></div>
+</main>
+
+<footer class="foot"><div class="container">Demo store using FakeStoreAPI. No real orders or payments.</div></footer>
+
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+  <div class="d-head">
+    <h2 id="drawerTitle">Your cart</h2>
+    <button class="icon-btn" id="closeCart" aria-label="Close cart">✕</button>
+  </div>
+  <div class="d-body" id="cartItems"></div>
+  <div class="d-foot" id="cartFoot">
+    <p class="ship-note" id="shipNote"></p>
+    <dl class="totals">
+      <div><dt>Subtotal</dt><dd id="subtotal"></dd></div>
+      <div><dt>Tax (8%)</dt><dd id="tax"></dd></div>
+      <div><dt>Shipping</dt><dd id="shipping"></dd></div>
+      <div class="grand"><dt>Total</dt><dd id="total"></dd></div>
+    </dl>
+    <button class="btn" id="checkoutBtn">Checkout</button>
+    <button class="link" id="clearBtn">Clear cart</button>
+  </div>
+</aside>
+
+<dialog id="checkout" aria-labelledby="coTitle">
+  <form id="coForm" class="dlg">
+    <h2 id="coTitle">Checkout</h2>
+    <p class="muted">Demo only. Do not enter real payment details.</p>
+    <label for="coName">Full name</label>
+    <input id="coName" required autocomplete="name">
+    <label for="coEmail">Email</label>
+    <input id="coEmail" type="email" required autocomplete="email">
+    <label for="coAddr">Delivery address</label>
+    <textarea id="coAddr" rows="2" required autocomplete="street-address"></textarea>
+    <p class="co-total">Order total: <strong id="coTotal"></strong></p>
+    <div class="row">
+      <button type="button" class="btn ghost" id="coCancel">Cancel</button>
+      <button type="submit" class="btn">Place order</button>
+    </div>
+  </form>
+  <div class="dlg done" id="coDone" hidden>
+    <div class="tick" aria-hidden="true">✓</div>
+    <h2>Order confirmed</h2>
+    <p>Thank you, <strong id="doneName"></strong>. Your order <strong id="orderId"></strong> has been placed.</p>
+    <p class="muted" id="doneMail"></p>
+    <button class="btn" id="coClose">Continue shopping</button>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
