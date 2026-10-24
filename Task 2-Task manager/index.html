@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskFlow | Task Manager &amp; Productivity Tracker</title>
+<meta name="description" content="A task manager with categories, due dates, filters, search, drag-and-drop and localStorage persistence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div>
+      <h1>TaskFlow</h1>
+      <p class="muted" id="summary">Plan your day, one task at a time.</p>
+    </div>
+    <button class="icon-btn" id="themeBtn" aria-label="Switch to dark theme">☾</button>
+  </header>
+
+  <form id="addForm" class="add" autocomplete="off">
+    <label class="sr" for="title">Task title</label>
+    <input id="title" type="text" placeholder="What needs to be done?" maxlength="120" required>
+    <label class="sr" for="category">Category</label>
+    <select id="category">
+      <option>Work</option><option>Personal</option><option>Study</option>
+    </select>
+    <label class="sr" for="due">Due date</label>
+    <input id="due" type="date">
+    <button class="btn" type="submit">Add task</button>
+  </form>
+
+  <div class="controls">
+    <div class="tabs" role="group" aria-label="Filter by status">
+      <button class="tab active" data-filter="all" aria-pressed="true">All</button>
+      <button class="tab" data-filter="active" aria-pressed="false">Active</button>
+      <button class="tab" data-filter="completed" aria-pressed="false">Completed</button>
+    </div>
+    <label class="sr" for="catFilter">Filter by category</label>
+    <select id="catFilter">
+      <option value="all">All categories</option>
+      <option>Work</option><option>Personal</option><option>Study</option>
+    </select>
+    <label class="sr" for="search">Search tasks</label>
+    <input id="search" type="search" placeholder="Search tasks...">
+  </div>
+
+  <ul id="list" class="list" aria-live="polite"></ul>
+  <p id="empty" class="empty" hidden></p>
+
+  <footer class="foot">
+    <span id="count" class="muted"></span>
+    <button class="link" id="clearDone">Clear completed</button>
+  </footer>
+  <p class="hint muted">Tip: drag a task by its handle (⋮⋮) to reorder.</p>
+</div>
+
+<dialog id="editDlg" aria-labelledby="editTitle">
+  <form id="editForm" method="dialog" class="dlg">
+    <h2 id="editTitle">Edit task</h2>
+    <label for="eTitle">Title</label>
+    <input id="eTitle" type="text" maxlength="120" required>
+    <label for="eCategory">Category</label>
+    <select id="eCategory"><option>Work</option><option>Personal</option><option>Study</option></select>
+    <label for="eDue">Due date</label>
+    <input id="eDue" type="date">
+    <div class="row">
+      <button class="btn ghost" type="button" id="eCancel">Cancel</button>
+      <button class="btn" type="submit">Save changes</button>
+    </div>
+  </form>
+</dialog>
+<script src="script.js"></script>
+</body>
+</html>
