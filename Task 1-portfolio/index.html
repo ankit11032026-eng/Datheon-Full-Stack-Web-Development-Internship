@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankit Vishwakarma | Frontend Developer</title>
+<meta name="description" content="Portfolio of Ankit Vishwakarma, a frontend developer skilled in React.js, Vue.js and JavaScript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="logo" href="#home" aria-label="Ankit Vishwakarma, home"><span class="mark">AV</span>Ankit Vishwakarma</a>
+    <nav id="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch to dark theme">☾</button>
+      <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="status"><span class="dot"></span>Open to frontend roles</p>
+        <h1>Hi, I'm Ankit.<br>I build responsive web apps with React and Vue.</h1>
+        <p class="lead">B.Tech Computer Science graduate from Thane. I turn real-world workflows, like hospitals, attendance and online learning, into clean, usable interfaces.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn ghost" href="resume.pdf" download>Download resume</a>
+        </div>
+        <ul class="hero-meta">
+          <li>Thane, Maharashtra</li>
+          <li>React.js · Vue.js · JavaScript</li>
+        </ul>
+      </div>
+      <div class="code-card" aria-hidden="true">
+        <div class="code-top"><i></i><i></i><i></i><span>ankit.js</span></div>
+<pre><span class="k">const</span> ankit = {
+  role: <span class="s">"Frontend Developer"</span>,
+  stack: [<span class="s">"React"</span>, <span class="s">"Vue"</span>, <span class="s">"JS"</span>],
+  education: <span class="s">"B.Tech CSE"</span>,
+  location: <span class="s">"Thane, IN"</span>,
+  <span class="k">hireMe</span>: () =&gt; <span class="s">"Let's talk!"</span>
+};</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about">
+      <div>
+        <h2>About me</h2>
+        <p>I'm a Computer Science graduate who enjoys building responsive, user-focused web applications. I work comfortably across the front-end stack (HTML, CSS and JavaScript) and have built complete systems end to end, including the UI, application logic and data-driven features.</p>
+        <p>I learn quickly, pay attention to detail, and I'm looking to contribute to a fast-paced engineering team from day one.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Frontend / Web Developer</dd></div>
+        <div><dt>Degree</dt><dd>B.Tech, Computer Science and Engineering</dd></div>
+        <div><dt>Languages</dt><dd>English (Fluent), Hindi (Fluent), Marathi (Read/Write)</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="skills" class="alt">
+    <div class="container">
+      <h2>Technical skills</h2>
+      <div class="skills">
+        <article class="skill"><h3>Core</h3><div class="chips"><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div></article>
+        <article class="skill"><h3>Frameworks and libraries</h3><div class="chips"><span>React.js</span><span>Vue.js</span><span>jQuery</span></div></article>
+        <article class="skill"><h3>Competencies</h3><div class="chips"><span>Responsive UI design</span><span>REST API integration</span><span>Front-end engineering</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Featured projects</h2>
+      <p class="lead">Select a project to see what I built and the tools I used.</p>
+      <div class="projects" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <section id="education" class="alt">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="item"><h3>B.Tech, Computer Science and Engineering</h3><p>Chhatrapati Shivaji Maharaj University, Navi Mumbai</p><span class="badge">CGPA 7.0</span></div>
+        <div class="item"><h3>Class XII, Maharashtra Board</h3><p>2023</p><span class="badge">60%</span></div>
+        <div class="item"><h3>Class X, Maharashtra Board</h3><p>2021</p><span class="badge">92%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Get in touch</h2>
+      <p class="lead">I'm available for frontend and web developer roles. Email or call me, and I'll reply as soon as I can.</p>
+      <div class="links">
+        <a href="mailto:ankithvi909@gmail.com"><small>Email</small>ankithvi909@gmail.com</a>
+        <a href="tel:+919172064626"><small>Phone</small>+91 91720 64626</a>
+        <a href="resume.pdf" download><small>Resume</small>Download PDF</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container">© <span id="yr"></span> Ankit Vishwakarma. Built with HTML, CSS and JavaScript.</div></footer>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <div class="dlg">
+    <button class="icon-btn x" id="mClose" aria-label="Close project details">✕</button>
+    <h3 id="mTitle"></h3>
+    <p id="mType" class="muted"></p>
+    <ul id="mPoints"></ul>
+    <div class="chips" id="mTags"></div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
