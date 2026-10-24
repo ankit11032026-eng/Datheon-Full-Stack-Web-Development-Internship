@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skycast | Live Weather Forecast</title>
+<meta name="description" content="Search any city for live weather, humidity, wind, pressure and a 5-day forecast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-sky="cloudy">
+<main class="app">
+  <header>
+    <h1>Skycast</h1>
+    <p class="sub">Live weather for any city in the world</p>
+  </header>
+
+  <form id="searchForm" class="search" role="search" autocomplete="off">
+    <label class="sr" for="city">City name</label>
+    <input id="city" type="search" placeholder="Search a city, e.g. Mumbai" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <div class="quick" id="quick" aria-label="Quick cities"></div>
+
+  <div id="loading" class="loading" hidden role="status"><span class="spinner" aria-hidden="true"></span>Fetching weather...</div>
+  <div id="error" class="error" hidden role="alert"></div>
+
+  <section id="result" hidden aria-live="polite">
+    <div class="card current">
+      <div>
+        <h2 id="place"></h2>
+        <p id="time" class="muted"></p>
+        <div class="temp-row">
+          <span id="icon" class="icon" aria-hidden="true"></span>
+          <span id="temp" class="temp"></span>
+        </div>
+        <p id="desc" class="desc"></p>
+        <p id="feels" class="muted"></p>
+      </div>
+      <dl class="stats">
+        <div><dt>Humidity</dt><dd id="humidity"></dd></div>
+        <div><dt>Wind speed</dt><dd id="wind"></dd></div>
+        <div><dt>Pressure</dt><dd id="pressure"></dd></div>
+      </dl>
+    </div>
+
+    <h3 class="fh">5-day forecast</h3>
+    <div id="forecast" class="forecast"></div>
+  </section>
+
+  <p class="credit" id="credit"></p>
+</main>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
